@@ -1,5 +1,6 @@
 const path = require("path"); // Adicione esta linha caso não esteja no código
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: "./js/script.js",
   output: {
@@ -19,6 +20,32 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader, // Extrai o CSS em um arquivo separado
+          "css-loader", // Processa os @imports no CSS
+          {
+            loader: "postcss-loader", // Processa o CSS
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require("autoprefixer")(), // Adiciona prefixos automaticamente
+                ],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html", // Usa o arquivo HTML existente como modelo
+      filename: "index.html", // Nome do arquivo gerado na pasta pública
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles.css", // Nome do arquivo CSS gerado
+    }),
+  ],
 };

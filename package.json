@@ -13,10 +13,17 @@
     "@babel/core": "^7.14.3",
     "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
+    "autoprefixer": "^10.4.20",
     "babel-loader": "^8.2.2",
+    "css-loader": "^7.1.2",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   }
