@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="/img/lobo.png" alt="Animais Fantásticos" width="120" />
-</p>
+
 
 <h1 align="center">
   🐺 Animais Fantásticos
